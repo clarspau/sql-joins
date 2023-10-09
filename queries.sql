@@ -3,6 +3,10 @@
 -- Write the following SQL commands to produce the necessary output.
 -- Join the two tables so that every column and record appears, regardless of if there is not an owner_id .
 
+SELECT *
+FROM owners AS owners_table
+FULL OUTER JOIN vehicles AS vehicles_table
+ON owners_table.id = vehicles_table.owner_id;
 
 
 -- Count the number of cars for each owner. Display the owners 
