@@ -12,5 +12,11 @@ ON owners_table.id = vehicles_table.owner_id;
 -- Count the number of cars for each owner. Display the owners 
 -- first_name , last_name and count of vehicles. The first_name should be ordered in ascending order.
 
+SELECT owners_table.first_name, owners_table.last_name, COUNT(vehicles_table.owner_id) AS vehicle_count
+FROM owners AS owners_table
+LEFT JOIN vehicles AS vehicles_table
+ON owners_table.id = vehicles_table.owner_id
+GROUP BY owners_table.first_name, owners_table.last_name
+ORDER BY owners_table.first_name;
 
 -- Count the number of cars for each owner and display the average price for each of the cars as integers. Display the owners first_name , last_name, average price and count of vehicles. The first_name should be ordered in descending order. Only display results with more than one vehicle and an average price greater than 10000. 
